@@ -11,8 +11,8 @@
     <?php$name = "สมชาย";
         $age = 30;
         $country = "ประเทศไทย";
-        /*เครื่องหมาย Single Quote ('') นั้นไม่สามารถน าค่าของตัวแปรมาแทรกลงไปได้ */
-        /* Double Quote ("") นั้นสามารถน าค่าของตัวแปรมาแทรกลงไปได้ */
+        /*เครื่องหมาย Single Quote ('') นั้นไม่สามารถนำค่าของตัวแปรมาแทรกลงไปได้ */
+        /* Double Quote ("") นั้นสามารถนำค่าของตัวแปรมาแทรกลงไปได้ */
         echo '<b>Single Quote:</b> My name is '.$name.', '.$age.' years old from '.$country.'<br />';
         echo "<b>Double Quote:</b> My name is $name, $age years old from $country";
 ?>
