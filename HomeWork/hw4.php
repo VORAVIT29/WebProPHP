@@ -125,7 +125,7 @@
             <!--วิชา1-->
             <input type="text" name="sub1" placeholder="ไม่ต้องเต็ม">
 
-            <label for="">หน่วยกิจ :</label>
+            <label for="">หน่วยกิต :</label>
             <select name="sun1">
                 <option value="0">0</option>
                 <option>1</option>
@@ -150,7 +150,7 @@
             <label for="">วิชาที่ 2 :</label>
             <!--วิชา2-->
             <input type="text" name="sub2" placeholder="ไม่ต้องเต็ม">
-            <label for="">หน่วยกิจ :</label>
+            <label for="">หน่วยกิต :</label>
             <select name="sun2">
                 <option value="0">0</option>
                 <option>1</option>
@@ -177,7 +177,7 @@
 
             <input type="text" name="sub3" placeholder="ไม่ต้องเต็ม">
 
-            <label for="">หน่วยกิจ :</label>
+            <label for="">หน่วยกิต :</label>
             <select name="sun3">
                 <option value="0">0</option>
                 <option>1</option>
@@ -203,7 +203,7 @@
             <!--วิชา4-->
             <input type="text" name="sub4" placeholder="ไม่ต้องเต็ม">
 
-            <label for="">หน่วยกิจ :</label>
+            <label for="">หน่วยกิต :</label>
             <select name="sun4">
                 <option value="0">0</option>
                 <option>1</option>
@@ -229,7 +229,7 @@
             <!--วิชา5-->
             <input type="text" name="sub5" placeholder="ไม่ต้องเต็ม">
 
-            <label for="">หน่วยกิจ :</label>
+            <label for="">หน่วยกิต :</label>
             <select name="sun5">
                 <option value="0">0</option>
                 <option>1</option>
