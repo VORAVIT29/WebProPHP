@@ -27,12 +27,12 @@
 
         td {
             text-align: center;
-            background-color:skyblue;
+            background-color: skyblue;
         }
     </style>
 
     <?php
-    $final = $mid = $ass = $home = $sum = $grade = '';
+    $final = $mid = $ass = $home = $sum = $grade = $err =  '';
 
     function Str_to_Int() //ฟังชั่นแปลง
     {
@@ -53,18 +53,18 @@
 
         if ($final >= 0 && $final <= 30) {
             $sum = intval($sum) + $final;
-        }
+        } else $err = "Final มีคะแนนเกิน";
 
         if ($mid >= 0 && $mid <= 30) {
             $sum = intval($sum) + $mid;
-        }
+        } else $err = "Mid มีคะแนนเกิน";
 
         if ($ass >= 0 && $ass <= 20) {
             $sum = intval($sum) + $ass;
-        }
+        } else $err = "Ass มีคะแนนเกิน";
         if ($home >= 0 && $home <= 20) {
             $sum = intval($sum) + $home;
-        }
+        } else $err = "HomeWork มีคะแนนเกิน";
 
 
         if ($sum < 50)  $grade = 'F'; //0-49
@@ -114,6 +114,7 @@
         <center>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <h1>HW3 : Call Grade</h1>
+                <h5 style="color:red;"><?php echo $err; ?></h5>
                 <label>Final :</label><br>
                 <input type="number" name="final" placeholder="คะแนนเต็ม 30" required><br><br>
                 <label>Mid :</label><br>

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>HW4</title>
     <style>
     body {
@@ -11,10 +12,11 @@
 
     input[type=text] {
         width: 20%;
+        height: 30px;
     }
 
     table {
-        width: 50%;
+        width: 100%;
         border-collapse: collapse;
     }
 
@@ -107,9 +109,8 @@
 
         $sum = 0;
         if ($g1 || $g2 || $g3 || $g4 || $g5 != 0) {
-            echo $avg = ($sun1 * $g1) + ($sun2 * $g2) + ($sun3 * $g3) + ($sun4 * $g4) + ($sun5 * $g5);
-            $sun_credit = $avg / ($g1 + $g2 + $g3 + $g4 + $g5);
-            $sum = $sun_credit;
+            $avg = ($sun1 * $g1) + ($sun2 * $g2) + ($sun3 * $g3) + ($sun4 * $g4) + ($sun5 * $g5);
+            $sum = $avg / ($sun1 + $sun2 + $sun3 + $sun4 + $sun5);
         } else $sum = "";
     }
     ?>
@@ -117,11 +118,12 @@
 
 <body>
     <center>
+        <?php if (!(isset($_POST['btnsub']))) { ?>
         <h1>HW4 : Call Grade Period Average (GPA)</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <label for="">วิชาที่ 1 :</label>
             <!--วิชา1-->
-            <input type="text" name="sub1">
+            <input type="text" name="sub1" placeholder="ไม่ต้องเต็ม">
 
             <label for="">หน่วยกิจ :</label>
             <select name="sun1">
@@ -134,7 +136,6 @@
             </select>
 
             <label>Grade :</label>
-            <!--<input type="text"name="grade1">-->
             <select name="grade1">
                 <option>F</option>
                 <option>A</option>
@@ -148,7 +149,7 @@
 
             <label for="">วิชาที่ 2 :</label>
             <!--วิชา2-->
-            <input type="text" name="sub2">
+            <input type="text" name="sub2" placeholder="ไม่ต้องเต็ม">
             <label for="">หน่วยกิจ :</label>
             <select name="sun2">
                 <option value="0">0</option>
@@ -174,7 +175,7 @@
             <label for="">วิชาที่ 3 :</label>
             <!--วิชา3-->
 
-            <input type="text" name="sub3">
+            <input type="text" name="sub3" placeholder="ไม่ต้องเต็ม">
 
             <label for="">หน่วยกิจ :</label>
             <select name="sun3">
@@ -200,7 +201,7 @@
 
             <label for="">วิชาที่ 4 :</label>
             <!--วิชา4-->
-            <input type="text" name="sub4">
+            <input type="text" name="sub4" placeholder="ไม่ต้องเต็ม">
 
             <label for="">หน่วยกิจ :</label>
             <select name="sun4">
@@ -226,7 +227,7 @@
 
             <label for="">วิชาที่ 5 :</label>
             <!--วิชา5-->
-            <input type="text" name="sub5">
+            <input type="text" name="sub5" placeholder="ไม่ต้องเต็ม">
 
             <label for="">หน่วยกิจ :</label>
             <select name="sun5">
@@ -251,45 +252,48 @@
             </select><br><br>
             <input type="submit" value="คำนวน" name="btnsub">
         </form>
-        <br><br>
-        <?php if (isset($_POST['btnsub'])) { ?>
-        <table>
-            <tr>
-                <th>วิชา</th>
-                <th>หน่วยกิต</th>
-                <th>Grade</th>
-            </tr>
-            <tr>
-                <td><?php echo $sj1; ?></td>
-                <td><?php echo $sun1; ?></td>
-                <td><?php echo $_POST['grade1'] . " ($g1)"; ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $sj2; ?></td>
-                <td><?php echo $sun2; ?></td>
-                <td><?php echo $_POST['grade2'] . " ($g2)"; ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $sj3; ?></td>
-                <td><?php echo $sun3; ?></td>
-                <td><?php echo $_POST['grade3'] . " ($g3)"; ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $sj4; ?></td>
-                <td><?php echo $sun4; ?></td>
-                <td><?php echo $_POST['grade4'] . " ($g4)"; ?></td>
-            </tr>
-            <tr>
-                <td><?php echo $sj5; ?></td>
-                <td><?php echo $sun5; ?></td>
-                <td><?php echo $_POST['grade5'] . " ($g5)"; ?></td>
-            </tr>
-            <tr>
-                <th>เกรดเฉลี่ยสะสม</th>
-                <th colspan="2"><?php echo $sum; ?></th>
-            </tr>
-        </table>
-        <?php } ?>
+        <?php } else { ?>
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+            <table>
+                <tr>
+                    <th>วิชา</th>
+                    <th>หน่วยกิต</th>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <td><?php echo $sj1; ?></td>
+                    <td><?php echo $sun1; ?></td>
+                    <td><?php echo $_POST['grade1'] . " ($g1)"; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo $sj2; ?></td>
+                    <td><?php echo $sun2; ?></td>
+                    <td><?php echo $_POST['grade2'] . " ($g2)"; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo $sj3; ?></td>
+                    <td><?php echo $sun3; ?></td>
+                    <td><?php echo $_POST['grade3'] . " ($g3)"; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo $sj4; ?></td>
+                    <td><?php echo $sun4; ?></td>
+                    <td><?php echo $_POST['grade4'] . " ($g4)"; ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo $sj5; ?></td>
+                    <td><?php echo $sun5; ?></td>
+                    <td><?php echo $_POST['grade5'] . " ($g5)"; ?></td>
+                </tr>
+                <tr>
+                    <th>เกรดเฉลี่ยสะสม</th>
+                    <th colspan="2"><?php echo number_format($sum, 2); ?></th>
+                </tr>
+            </table>
+            <br><br>
+            <input type="submit" value="Back">
+            </from>
+            <?php } ?>
     </center>
 
 </body>
