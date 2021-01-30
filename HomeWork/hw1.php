@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>HW1</title>
 
     <style>
-        body {
-            margin: 80px;
-            padding: 20px;
-        }
+    body {
+        margin: 80px;
+        padding: 20px;
+    }
     </style>
 
     <?php
