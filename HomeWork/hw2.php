@@ -4,12 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>HW2</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
     <style>
-    body {
-        margin: 100px;
-        padding: 20px;
-    }
+        body {
+            margin: 100px;
+            padding: 20px;
+            font-family: 'Monda', sans-serif;
+        }
+
+        button {
+            width: 20%;
+            height: 35px;
+        }
+
+        input[type=text]:focus {
+            background-color: #d3e0ea;
+            outline: none;
+        }
     </style>
 
     <?php
@@ -29,45 +41,35 @@
             if ($sum == '') $sum = $num2;
         }                   //close function
 
-        if ($op1 || $op2 == 'mul') {
+        if ($op1 == 'mul' || $op2 == 'mul' || $op1 == 'div' || $op2 == 'div') {
             if ($op1 == 'mul') {
                 Check_Sum();
                 $sum = $num1 * $sum;
+            } else if ($op1 == 'div') {
+                Check_Sum();
+                $sum = $num1 / $sum;
             }
             if ($op2 == 'mul') {
                 Check_Sum();
                 $sum = $sum * $num3;
-            }
-        }
-
-        if ($op1 || $op2 == 'div') {
-            if ($op1 == 'div') {
-                Check_Sum();
-                $sum = $num1 / $sum;
-            }
-            if ($op2 == 'div') {
+            } else if ($op2 == 'div') {
                 Check_Sum();
                 $sum = $sum / $num3;
             }
         }
 
-        if ($op1 || $op2 == 'add') {
+        if ($op1 == 'add' || $op2 == 'sub' || $op2 == 'add' || $op1 == 'sub') {
             if ($op1 == 'add') {
                 Check_Sum();
                 $sum = $num1 + $sum;
+            } else if ($op1 == 'sub') {
+                Check_Sum();
+                $sum = $num1 - $sum;
             }
             if ($op2 == 'add') {
                 Check_Sum();
                 $sum = $sum + $num3;
-            }
-        }
-
-        if ($op1 || $op2 == 'sub') {
-            if ($op1 == 'sub') {
-                Check_Sum();
-                $sum = $num1 - $sum;
-            }
-            if ($op2 == 'sub') {
+            } else if ($op2 == 'sub') {
                 Check_Sum();
                 $sum = $sum - $num3;
             }
@@ -107,13 +109,15 @@
         </div>
         <br><br>
         <font size="6">
-            <?php if (isset($_POST['sub'])) {
-                echo "Sum of number = " . number_format($sum);
-            } ?>
+            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+                <?php if (isset($_POST['sub'])) {
+                    echo "Sum of number = " . number_format($sum, 2);  ?>
+                    <br><br>
+                    <button type="submit">Reset</button>
+                <?php } ?>
+
+            </form>
         </font>
-
-
-
     </center>
 </body>
 

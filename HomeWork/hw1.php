@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>HW1</title>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
     <style>
     body {
         margin: 80px;
         padding: 20px;
+        font-family: 'Monda', sans-serif;
     }
     </style>
 

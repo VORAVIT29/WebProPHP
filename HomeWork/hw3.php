@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>HW3</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monda&display=swap" rel="stylesheet">
     <style>
     body {
         margin: 100px;
+        font-family: 'Monda', sans-serif;
     }
 
     input {
@@ -110,20 +113,18 @@
         </font>
     </center>
     <?php } else { ?>
-    <?php
-        ?>
     <center>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <h1>HW3 : Call Grade</h1>
+            <h1>HW3 : Call Grade</h1> 
             <h5 style="color:red;"><?php echo $err; ?></h5>
             <label>Final :</label><br>
-            <input type="number" name="final" placeholder="คะแนนเต็ม 30" required><br><br>
+            <input type="number" name="final" placeholder="คะแนนเต็ม 30" value="<?php echo $inal = ($final <=30)?$_POST['final']:" "; ?>" required><br><br>
             <label>Mid :</label><br>
-            <input type="number" name="mid" placeholder="คะแนนเต็ม 30" required><br><br>
+            <input type="number" name="mid" placeholder="คะแนนเต็ม 30" value="<?php echo $mid = ($mid <=30)?$_POST['mid']:" "; ?>" required><br><br>
             <label>Assign :</label><br>
-            <input type="number" name="ass" placeholder="คะแนนเต็ม 20" required><br><br>
+            <input type="number" name="ass" placeholder="คะแนนเต็ม 20" value="<?php echo $ass = ($ass <=20)?$_POST['ass']:" "; ?>" required><br><br>
             <label>Homework :</label><br>
-            <input type="number" name="home" placeholder="คะแนนเต็ม 20" required><br><br>
+            <input type="number" name="home" placeholder="คะแนนเต็ม 20" value="<?php echo $home = ($home <=20)?$_POST['home']:" "; ?>" required><br><br>
             <input type="submit" name="sub" value="Call">
             <input type="reset" value="Clear">
         </form>
