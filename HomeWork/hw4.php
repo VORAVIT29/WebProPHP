@@ -11,11 +11,15 @@
             margin: 100px;
             padding: 40px;
             font-family: 'Monda', sans-serif;
+            background-color: #f7f7e8;
         }
 
         input[type=text] {
             width: 20%;
             height: 30px;
+        }
+        input[type=text]:focus {
+            background-color: ;
         }
 
         table {
@@ -26,16 +30,18 @@
         td,
         th,
         tr {
-            border: 2px solid #dddddd;
+            border: 2px solid black;
         }
 
         th {
             height: 70px;
+            background-color: #fcd1d1;
         }
 
         td {
             text-align: center;
             height: 30px;
+            background-color: #ece2e1;
         }
     </style>
     <?php
@@ -224,6 +230,7 @@
             </form>
         <?php } else { ?>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+                <h1>เกรดเฉลี่ยสะสม (GPA)</h1>
                 <h3>
                     <table style="width: 100% ">
 
@@ -233,39 +240,39 @@
                             <th>Grade</th>
                         </tr>
                         <tr>
-                            <td><?php echo $sj1; ?></td>
+                            <td><?php echo $sj1 = ($sj1 == "") ? "วิชาที่ 1" : $sj1; ?></td>
                             <td><?php echo $sun1; ?></td>
                             <td><?php echo $_POST['grade1'] . " ($g1)"; ?></td>
                         </tr>
                         <tr>
-                            <td><?php echo $sj2; ?></td>
+                            <td><?php echo $sj2 = ($sj2 == "") ? "วิชาที่ 2" : $sj2; ?></td>
                             <td><?php echo $sun2; ?></td>
                             <td><?php echo $_POST['grade2'] . " ($g2)"; ?></td>
                         </tr>
                         <tr>
-                            <td><?php echo $sj3; ?></td>
+                            <td><?php echo $sj3 = ($sj3 == "") ? "วิชาที่ 3" : $sj3; ?></td>
                             <td><?php echo $sun3; ?></td>
                             <td><?php echo $_POST['grade3'] . " ($g3)"; ?></td>
                         </tr>
                         <tr>
-                            <td><?php echo $sj4; ?></td>
+                            <td><?php echo $sj4 = ($sj4 == "") ? "วิชาที่ 4" : $sj4; ?></td>
                             <td><?php echo $sun4; ?></td>
                             <td><?php echo $_POST['grade4'] . " ($g4)"; ?></td>
                         </tr>
                         <tr>
-                            <td><?php echo $sj5; ?></td>
+                            <td><?php echo $sj5 = ($sj5 == "") ? "วิชาที่ 5" : $sj5; ?></td>
                             <td><?php echo $sun5; ?></td>
                             <td><?php echo $_POST['grade5'] . " ($g5)"; ?></td>
                         </tr>
                         <tr>
                             <th>เกรดเฉลี่ยสะสม (GPA)</th>
-                            <th colspan="2"><?php echo number_format($sum,4); ?> = <?php echo number_format($sum, 2); ?></th>
+                            <th colspan="2"><?php echo number_format($sum, 4); ?> = <?php echo number_format($sum, 2); ?></th>
                         </tr>
 
                     </table>
                 </h3>
                 <br><br>
-                <input type="submit" value="Back">
+                <input type="submit" value="Back" style="height:50px;width:40%;">
                 </from>
             <?php } ?>
     </center>
