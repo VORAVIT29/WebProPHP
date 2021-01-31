@@ -40,7 +40,7 @@
     </style>
     <?php
     $sum = 0;
-    if (isset($_POST['btnsub'])) { //เหลือเช็คหน่วยกิตถ้าค่าเป็นไม่ได้ใส่
+    if (isset($_POST['btnsub'])) {
         $sj1 = $_POST['sub1'];
         $sj2 = $_POST['sub2'];
         $sj3 = $_POST['sub3'];
@@ -59,62 +59,6 @@
         $g4 = $_POST['grade4'];
         $g5 = $_POST['grade5'];
 
-        /*if ($g1 || $g2 || $g3 || $g4 || $g5 == "A") {
-            if ($g1 == "A") $g1 = 4.0;
-            if ($g2 == "A") $g2 = 4.0;
-            if ($g3 == "A") $g3 = 4.0;
-            if ($g4 == "A") $g4 = 4.0;
-            if ($g5 == "A") $g5 = 4.0;
-        }
-        if ($g1 || $g2 || $g3 || $g4 || $g5 == "B+") {
-            if ($g1 == 'B+') $g1 = 3.5;
-            if ($g2 == 'B+') $g2 = 3.5;
-            if ($g3 == 'B+') $g3 = 3.5;
-            if ($g4 == 'B+') $g4 = 3.5;
-            if ($g5 == 'B+') $g5 = 3.5;
-        }
-        if ($g1 || $g2 || $g3 || $g4 || $g5 == "B") {
-            if ($g1 == 'B') $g1 = 3.0;
-            if ($g2 == 'B') $g2 = 3.0;
-            if ($g3 == 'B') $g3 = 3.0;
-            if ($g4 == 'B') $g4 = 3.0;
-            if ($g5 == 'B') $g5 = 3.0;
-        }
-        if ($g1 || $g2 || $g3 || $g4 || $g5 == "C+") {
-            if ($g1 == 'C+') $g1 = 2.5;
-            if ($g2 == 'C+') $g2 = 2.5;
-            if ($g3 == 'C+') $g3 = 2.5;
-            if ($g4 == 'C+') $g4 = 2.5;
-            if ($g5 == 'C+') $g5 = 2.5;
-        }
-        if ($g1 || $g2 || $g3 || $g4 || $g5 == "C") {
-            if ($g1 == "C") $g1 = 2.0;
-            if ($g2 == "C") $g2 = 2.0;
-            if ($g3 == "C") $g3 = 2.0;
-            if ($g4 == "C") $g4 = 2.0;
-            if ($g5 == "C") $g5 = 2.0;
-        }
-        if ($g1 || $g2 || $g3 || $g4 || $g5 == "D+") {
-            if ($g1 == 'D+') $g1 = 1.5;
-            if ($g2 == 'D+') $g2 = 1.5;
-            if ($g3 == 'D+') $g3 = 1.5;
-            if ($g4 == 'D+') $g4 = 1.5;
-            if ($g5 == 'D+') $g5 = 1.5;
-        }
-        if ($g1 || $g2 || $g3 || $g4 || $g5 == "D") {
-            if ($g1 == 'D') $g1 = 1.0;
-            if ($g2 == 'D') $g2 = 1.0;
-            if ($g3 == 'D') $g3 = 1.0;
-            if ($g4 == 'D') $g4 = 1.0;
-            if ($g5 == 'D') $g5 = 1.0;
-        }
-        if ($g1 || $g2 || $g3 || $g4 || $g5 == "F") {
-            if ($g1 == 'F') $g1 = 0;
-            if ($g2 == 'F') $g2 = 0;
-            if ($g3 == 'F') $g3 = 0;
-            if ($g4 == 'F') $g4 = 0;
-            if ($g5 == 'F') $g5 = 0;
-        }*/
         function Grade_to_Num($grd)
         {
             if ($grd == 'A') $grd = 4.0;
@@ -127,17 +71,12 @@
             else  $grd = 0.0;
             return ($grd);
         }
+
         $g1 = Grade_to_Num($g1);
         $g2 = Grade_to_Num($g2);
-        $g2 = Grade_to_Num($g3);
+        $g3 = Grade_to_Num($g3);
         $g4 = Grade_to_Num($g4);
         $g5 = Grade_to_Num($g5);
-        
-        echo $g1;
-        echo $g2;
-        echo $g3;
-        echo $g4;
-        echo $g5;
 
         if ($g1 || $g2 || $g3 || $g4 || $g5 != 0) {
             $avg = ($sun1 * $g1) + ($sun2 * $g2) + ($sun3 * $g3) + ($sun4 * $g4) + ($sun5 * $g5);
@@ -153,7 +92,7 @@
             <h1>HW4 : Call Grade Period Average (GPA)</h1>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <label for="">วิชาที่ 1 :</label>
-                <!--วิชา1-->
+                <!-- วิชา1 -->
                 <input type="text" name="sub1" placeholder="ไม่ต้องชื่อเต็ม">
 
                 <label for="">หน่วยกิต :</label>
@@ -320,7 +259,7 @@
                         </tr>
                         <tr>
                             <th>เกรดเฉลี่ยสะสม (GPA)</th>
-                            <th colspan="2"><?php echo number_format($sum, 2); ?></th>
+                            <th colspan="2"><?php echo number_format($sum,4); ?> = <?php echo number_format($sum, 2); ?></th>
                         </tr>
 
                     </table>
