@@ -18,6 +18,7 @@
             width: 20%;
             height: 30px;
         }
+
         input[type=text]:focus {
             background-color: ;
         }
@@ -84,7 +85,7 @@
         $g4 = Grade_to_Num($g4);
         $g5 = Grade_to_Num($g5);
 
-        if ($g1 || $g2 || $g3 || $g4 || $g5 != 0) {
+        if (($g1 || $g2 || $g3 || $g4 || $g5 != 0) && ($sun1 || $sun2 || $sun3 || $sun4 || $sun5 != 0)) {
             $avg = ($sun1 * $g1) + ($sun2 * $g2) + ($sun3 * $g3) + ($sun4 * $g4) + ($sun5 * $g5);
             $sum = $avg / ($sun1 + $sun2 + $sun3 + $sun4 + $sun5);
         } else $sum = 0;
@@ -272,7 +273,7 @@
                     </table>
                 </h3>
                 <br><br>
-                <input type="submit" value="Back" style="height:50px;width:40%;">
+                <input type="submit" value="Back" style="height:50px;width:40%;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
                 </from>
             <?php } ?>
     </center>
