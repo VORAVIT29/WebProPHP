@@ -20,12 +20,17 @@
         }
 
         input[type=text]:focus {
-            background-color: ;
+            background-color: skyblue;
+        }
+
+        input[type=submit] {
+            border-radius: 25px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         }
 
         td,
@@ -227,7 +232,7 @@
                     <option>D+</option>
                     <option>D</option>
                 </select><br><br>
-                <input type="submit" value="คำนวน" name="btnsub">
+                <input type="submit" value="คำนวน" name="btnsub" style="width: 20%;height:25px;">
             </form>
         <?php } else { ?>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
@@ -267,7 +272,8 @@
                         </tr>
                         <tr>
                             <th>เกรดเฉลี่ยสะสม (GPA)</th>
-                            <th colspan="2"><?php echo number_format($sum, 4); ?> = <?php echo number_format($sum, 2); ?></th>
+                            <th colspan="2"><?php echo number_format($sum, 4); ?> = <?php echo number_format($sum, 2); ?>
+                            </th>
                         </tr>
 
                     </table>
