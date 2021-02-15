@@ -38,6 +38,7 @@
         $price = $price * 60;
     }
     ?>
+    
     <center>
         <h1><?php echo $massage; ?></h1>
         <?php if ($check) { ?>

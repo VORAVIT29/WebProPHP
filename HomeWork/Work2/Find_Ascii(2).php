@@ -27,7 +27,7 @@
 
         for ($i = 0; $i < $length; $i++) {
 
-            if ($text[$i] !== " " && ord($text[$i]) > 47) {
+            if ($text[$i] !== " " && ((ord($text[$i]) > 64 && ord($text[$i]) < 91) || (ord($text[$i]) > 96 && ord($text[$i]) < 123))) {
                 //convert letters to Ascii
                 $ord = ord($text[$i]);
                 //push

@@ -17,7 +17,8 @@
         input[type=number] {
             width: 10%;
         }
-        input[type=number]:focus{
+
+        input[type=number]:focus {
             background-color: #E6F1FF;
         }
     </style>
