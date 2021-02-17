@@ -50,17 +50,14 @@
             for ($index = 0; $index < count($arr); $index++) {
 
                 if ($index % 5 == 0) echo "<br>";
-
                 if ($arr[$index] === 32) {
                     echo "Space = " . $arr_count['' . $arr[$index] . ''] . " , ";
                     continue;
                 }
-
                 echo chr($arr[$index]) . " = " . $arr_count["$arr[$index]"] . " , ";
             }
         }
         ?>
-
     </center>
 </body>
 
