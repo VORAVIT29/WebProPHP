@@ -35,6 +35,7 @@ if(isset($_POST['sub'])){
     function page_footer($message = "ขอบคุณ")
     {
         echo '<hr>' . $message;
+        
         echo '</body></html>';
     }
     // declare function checker
