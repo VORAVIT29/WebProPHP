@@ -47,7 +47,7 @@
         <?php } else { ?>
             <img src="https://media2.giphy.com/media/MuztdWJQ4PR7i/giphy.gif?cid=ecf05e47flplump9p0k0ibwx1ck8zf418aiie5y051kb891w&rid=giphy.gif" alt="Sad">
         <?php } ?>
-        <br><br><a href="Lottery.php"><button type="submit">Back</button></a>
+        <br><br><a href="Lottery(3.1).php"><button type="submit">Back</button></a>
         <br>
         <h3>รางวัล เลขที่ออก คือ : <font size="5"><?php echo $lottery; ?></font></h3>
     </center>

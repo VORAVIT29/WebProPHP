@@ -26,7 +26,7 @@
 
 <body>
     <center>
-        <form action="Result-lottery.php" method="post">
+        <form action="Result-lottery(3.2).php" method="post">
             <h1 style="color: #2172FF;">โปรแกรม ตรวจ เลขท้าย 2 ตัว</h1>
             <h2>รางวัล เมื่อถูกเลขท้าย 2 ตัว (ต้นทุนซื้อ x 60 เท่า)</h2>
             <h2>เช่น ถ้าซื้อ 10 บาท ถูกรางวัล รับเงิน 600 บาท<br>
