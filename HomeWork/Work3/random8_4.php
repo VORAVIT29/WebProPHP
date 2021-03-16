@@ -111,7 +111,7 @@ if(isset($_POST['sub'])){
         <label for="">End Num :</label>
         <input type="number" name="end">
         <input type="submit" value="submit" name="sub">
-        <br>
+        <br><br>
     </form>
     <?php }?>
 </body>
