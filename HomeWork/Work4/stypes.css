@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10;
+}
+
+.columnLeft {
+    /*background-color: black;*/
+    float: left;
+    width: 50%;
+    height: 550px;
+    padding: 15px;
+}
+
+.columnRight {
+    float: right;
+    width: 50%;
+    padding: 15px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/*เอาตัวหนังสือให้อยู่ตรงกลาง */
+
+fieldset {
+    padding: 50px;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    text-align: center;
+}
+
+.header {
+    width: 100%;
+    height: auto;
+}
+
+legend {
+    text-align: center;
+}
+
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}
