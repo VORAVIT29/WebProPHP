@@ -50,7 +50,7 @@
                     </select>
 
                     หรือ <input type="radio" name="ch" onclick="checkDisabled1()">
-                    จำนวนเงิน <input type="text" name="price1" id="check1" disabled required> บาท
+                    จำนวนเงิน <input type="text" name="price1"  id="check1" disabled required> บาท
 
                 </fieldset>
             </div>
