@@ -27,12 +27,14 @@ if (isset($_POST['login_user'])) {
             header('Location: index.php');
         } else {
             array_push($error, 'Wrong Username or Password');
-            $_SESSION['error'] = 'Wrong Usernameor Password!';
+            $_SESSION['error'] = 'Wrong Username or Password!';
+            $_SESSION['name'] = $username;
             header('Location: login.php');
         }
     } else {
         array_push($error, 'Username & Password is required');
         $_SESSION['error'] = 'Usename & Password is required!';
+        $_SESSION['name'] = $username;
         header('Location: login.php');
     }
 }
