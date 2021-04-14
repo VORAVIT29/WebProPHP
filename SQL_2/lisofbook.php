@@ -16,9 +16,7 @@ if (isset($_SESSION['del'])) {
 if (empty($_SESSION['name'])) {
     header('Location: login.php');
 }
-if ($_SESSION['level'] == 1) {
-    $mes = 'Admin';
-} else $mes = 'User';
+$mes = ($_SESSION['level'] == 1)? 'Admin': 'User';
 ?>
 
 <body>
@@ -61,7 +59,9 @@ if ($_SESSION['level'] == 1) {
     ?>
     </tr>
     </table><br><br>
-    <div align="center"> <a HREF="addbook.php">เพิ่มรายการหนังสือ</a></div><br>
+    <?php if ($_SESSION['level'] == 1) { ?>
+        <div align="center"> <a HREF="addbook.php">เพิ่มรายการหนังสือ</a></div><br>
+    <?php } ?>
     <div align="center"><a href="logout.php">ออกจากระบบ</a></div>
     <?php
     mysqli_close($conn);
